@@ -28,6 +28,8 @@
 *.app
 
 Makefile
-moc_mainwindow.cpp
+moc_*.cpp
+qrc_*.cpp
+*~
 qacekit.pro.user
 ui_mainwindow.h

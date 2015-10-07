@@ -16,7 +16,12 @@ public:
     ~MainWindow();
 
 public slots:
-    void inspect();
+
+   void file_open();
+   void file_new();
+   void file_close();
+   void file_save();
+   void file_quit();
 
 private:
     Ui::MainWindow *ui;
