@@ -5,31 +5,29 @@
 #include <QWidget>
 
 namespace Ui {
-  class AceKit;
+class AceKit;
 }
 
-class AceKit : public QWidget
-{
-    Q_OBJECT
+class AceKit : public QWidget {
+  Q_OBJECT
 
-    Q_PROPERTY(QString transfer_content MEMBER transfer_content);
-    QString transfer_content;
+  Q_PROPERTY(QString transfer_content MEMBER transfer_content);
+  QString transfer_content;
 
-    void attachObject();
-    QWebView* wv;
-    QWebFrame* frame;
+  void attachObject();
+  QWebView *wv;
+  QWebFrame *frame;
 
 public:
+  AceKit(QWidget *parent = 0);
 
-    AceKit(QWidget *parent = 0);
-
-    QString getContent();
-    void setContent(QString content);
-    void setTheme(QString theme);
-    void setMode(QString mode);
+  QString getContent();
+  void setContent(QString content);
+  void setTheme(QString theme);
+  void setMode(QString mode);
 
 signals:
-    void on_change();
+  void on_change();
 };
 
 #endif

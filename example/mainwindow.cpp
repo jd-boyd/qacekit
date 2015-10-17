@@ -4,23 +4,17 @@
 #include "acekit.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
   connect(ui->webView, &AceKit::on_change, this, &MainWindow::editor_change);
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
+MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::file_open() {
-  QString fileName = QFileDialog::getOpenFileName(this,
-					  tr("Open File"),
-					  "/", tr("Image Files (*.png *.jpg *.bmp)"));
+  QString fileName = QFileDialog::getOpenFileName(
+      this, tr("Open File"), "/", tr("Image Files (*.png *.jpg *.bmp)"));
 }
 
 void MainWindow::file_new() {
@@ -44,6 +38,4 @@ void MainWindow::file_quit() {
   QApplication::quit();
 }
 
-void MainWindow::editor_change() {
-    qDebug() << "Editor change";
-}
+void MainWindow::editor_change() { qDebug() << "Editor change"; }

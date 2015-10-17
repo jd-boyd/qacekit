@@ -7,26 +7,25 @@ namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
+class MainWindow : public QMainWindow {
+  Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+  explicit MainWindow(QWidget *parent = 0);
+  ~MainWindow();
 
 public slots:
 
-   void file_open();
-   void file_new();
-   void file_close();
-   void file_save();
-   void file_quit();
+  void file_open();
+  void file_new();
+  void file_close();
+  void file_save();
+  void file_quit();
 
-   void editor_change();
+  void editor_change();
 
 private:
-    Ui::MainWindow *ui;
+  Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
