@@ -322,4 +322,5 @@
         <file>../ace-builds/src-min-noconflict/snippets/dot.js</file>
         <file>../ace-builds/src-min-noconflict/snippets/d.js</file>
     </qresource>
+    <qresource prefix="/ace-builds"/>
 </RCC>

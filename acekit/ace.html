@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ACE in Action</title>
 <style type="text/css" media="screen">
     #editor {
         position: absolute;
@@ -22,6 +21,7 @@
 <script src="ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     window.qacekit_editor = ace.edit("editor");
+    window.qacekit_editor.getSession().on('change', AceKit.on_change);
     //window.qacekit_editor.setTheme("ace/theme/monokai");
     //window.qacekit_editor.getSession().setMode("ace/mode/javascript");
 </script>

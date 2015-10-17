@@ -5,10 +5,11 @@
 AceKit::AceKit(QWidget *parent)
   : QWidget(parent)
 {
+  Q_INIT_RESOURCE(acekit);
   wv = new QWebView(parent);
   frame = wv->page()->mainFrame();
-  auto u = QUrl(QStringLiteral("qrc:/static/ace.html"));
-  wv->setUrl(u);
+  auto u = QUrl("qrc:/static/ace.html");
+  wv->load(u);
 
   wv->page()->settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, true);
   attachObject();
@@ -22,8 +23,9 @@ QString AceKit::getContent() {
 }
 
 /*
-  editor.setValue("the new text here"); // or session.setValue
-  editor.getValue(); // or session.getValue
+editor.getSession().on('change', function(e) {
+    // e.type, etc
+});
 */
 
 void AceKit::setContent(QString content) {

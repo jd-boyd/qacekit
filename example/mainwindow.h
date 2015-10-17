@@ -23,6 +23,8 @@ public slots:
    void file_save();
    void file_quit();
 
+   void editor_change();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
+  connect(ui->webView, &AceKit::on_change, this, &MainWindow::editor_change);
 }
 
 MainWindow::~MainWindow()
@@ -40,4 +41,9 @@ void MainWindow::file_save() {
 
 void MainWindow::file_quit() {
   qDebug() << "file_quit()";
+  QApplication::quit();
+}
+
+void MainWindow::editor_change() {
+    qDebug() << "Editor change";
 }

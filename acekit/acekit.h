@@ -28,6 +28,8 @@ public:
     void setTheme(QString theme);
     void setMode(QString mode);
 
+signals:
+    void on_change();
 };
 
 #endif
